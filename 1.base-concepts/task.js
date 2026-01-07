@@ -20,21 +20,18 @@ const d = b ** 2 - 4 * a * c;
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  
- if (contribution >= amount) {
+  if (contribution >= amount) {
     return 0;
   }
 
- const creditBody = amount - contribution;
-
- const monthlyRate = percent / 100 / 12;
+  const creditBody = amount - contribution;
+  const monthlyRate = percent / 100 / 12;
 
   const monthlyPayment =
     creditBody *
-    (monthlyRate +
-      monthlyRate / ((1 + monthlyRate) ** countMonths - 1));
+    (monthlyRate + monthlyRate / ((1 + monthlyRate) ** countMonths - 1));
 
-  const totalPayment = monthlyPayment * countMonths + contribution;
+  const totalPayment = monthlyPayment * countMonths;
 
   return Number(totalPayment.toFixed(2));
 }
