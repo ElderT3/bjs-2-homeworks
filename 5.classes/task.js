@@ -151,14 +151,3 @@ const book = library.giveBookByName("Машина времени");
 book.state = 20; // портим книгу
 book.fix(); // чиним
 library.addBook(book);
-
-const student = new Student("Олег Никифоров");
-student.addMark(5, "химия");
-student.addMark(5, "химия");
-student.addMark(5, "физика");
-student.addMark(4, "физика");
-student.addMark(6, "физика"); // не добавится
-
-console.log(student.getAverageBySubject("физика")); // 4.5
-console.log(student.getAverageBySubject("биология")); // 0
-console.log(student.getAverage()); // 4.75
